@@ -1,11 +1,11 @@
-# УСТАНОВКА
+# Install
 
-Хуячишь в проект папку dropler. Во вьюхе, в которой собираешься это дерьмо юзать, в самом верху ебошишь следующее: 
+Create a folder named ```dropler``` in your project directory. In view file where you gonna use this shit at start of file write next:
 ```php
 $this->registerJs("CKEDITOR.plugins.addExternal('dropler','".Yii::getAlias('@web')."/js/ckeditor/plugins/dropler/');");
 ```
 
-Далее подключаешь плагин через ```extraPlugin``` и указываешь в конфиге ```uploadUrl```, который обрабатывает загрузку файлов.
+Next you should add ```dropler``` plugin by using ```extraPlugin``` in the widget. Also you need to specify ```uploadUrl``` which will process uploading on your server.
 ```php
 <?= $form->field($model, 'description')->widget(Editor::className(), [
         'options' => [
@@ -16,7 +16,7 @@ $this->registerJs("CKEDITOR.plugins.addExternal('dropler','".Yii::getAlias('@web
             'droplerConfig' => [
                 'backend' => 'basic',
                 'settings' => [
-                    'uploadUrl' => 'http://farm.loc/backend/components/upload.php'
+                    'uploadUrl' => 'upload.php'
                 ]
             ]
         ],
